@@ -78,12 +78,14 @@ foreach ($keys as $key) {
             <?= I18N::translate('%1$s: %2$s', $label, $value) ?>
         </div>
         <div id="<?= e($id) ?>" class="ps-4 collapse <?= $expanded ? 'show' : '' ?>">
-            <?php array_shift($keys) ?>
-            <?php foreach ($keys as $key) : ?>
-                <?php if ($values[$key] !== '') : ?>
-                    <?= $elements[$key]->labelValue(strtr($values[$key], ["\r" => "\n"]), $tree) ?>
-                <?php endif ?>
-            <?php endforeach ?>
+            <?php if (Auth::isMember($tree) || ($tree->getPreference('SHOW_SOURCE_DETAIL_TOGGLES') === '0' && $tree->getPreference('SHOW_SOURCE_TITLES') === '0')) : ?>
+                <?php array_shift($keys) ?>
+                <?php foreach ($keys as $key) : ?>
+                    <?php if ($values[$key] !== '') : ?>
+                        <?= $elements[$key]->labelValue(strtr($values[$key], ["\r" => "\n"]), $tree) ?>
+                    <?php endif ?>
+                <?php endforeach ?>
+            <?php endif ?>
         </div>
     <?php endif ?>
 <?php else : ?>
