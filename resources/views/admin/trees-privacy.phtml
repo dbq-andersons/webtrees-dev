@@ -154,25 +154,6 @@ use Fisharebest\Webtrees\View;
         </div>
     </div>
 	
-	<!-- SHOW_SOURCE_DETAIL_TOGGLES -->
-    <div class="row mb-3">
-        <div class="col-form-label col-sm-4">
-            <label for="SHOW_SOURCE_DETAIL_TOGGLES">
-                <?= /* I18N: A configuration setting */ I18N::translate('Show source detail toggles in facts and events tables') ?>
-            </label>
-            <div class="hidden-xs">
-                <span class="badge visitors"><?= I18N::translate('visitors') ?></span>
-                <span class="badge members"><?= I18N::translate('members') ?></span>
-            </div>
-        </div>
-        <div class="col-sm-8">
-            <?= view('components/select', ['name' => 'SHOW_SOURCE_DETAIL_TOGGLES', 'selected' => $tree->getPreference('SHOW_SOURCE_DETAIL_TOGGLES'), 'options' => ['0' => I18N::translate('Show to visitors'), '1' => I18N::translate('Show to members')]]) ?>
-            <div class="form-text">
-                <?= /* I18N: Help text for the “Show source detail toggles in facts and events tables” configuration setting */ I18N::translate('This option will display the arrow toggles to expand source details in facts and events tables for individuals and families. This will override any automatic display of source details.') ?>
-            </div>
-        </div>
-    </div>
-
 	<!-- SHOW_SOURCE_TITLES -->
     <div class="row mb-3">
         <div class="col-form-label col-sm-4">
@@ -188,6 +169,25 @@ use Fisharebest\Webtrees\View;
             <?= view('components/select', ['name' => 'SHOW_SOURCE_TITLES', 'selected' => $tree->getPreference('SHOW_SOURCE_TITLES'), 'options' => ['0' => I18N::translate('Show to visitors'), '1' => I18N::translate('Show to members')]]) ?>
             <div class="form-text">
                 <?= /* I18N: Help text for the “Show source titles in facts and events tables” configuration setting */ I18N::translate('This option will display the source titles in facts and events tables for individuals and families. If not allowed, no source details will be available, and the source title will be replaced with PRIVATE.') ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- SHOW_SOURCE_DETAIL_TOGGLES -->
+    <div class="row mb-3">
+        <div class="col-form-label col-sm-4">
+            <label for="SHOW_SOURCE_DETAIL_TOGGLES">
+                <?= /* I18N: A configuration setting */ I18N::translate('Show source detail toggles in facts and events tables') ?>
+            </label>
+            <div class="hidden-xs">
+                <span class="badge visitors"><?= I18N::translate('visitors') ?></span>
+                <span class="badge members"><?= I18N::translate('members') ?></span>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <?= view('components/select', ['name' => 'SHOW_SOURCE_DETAIL_TOGGLES', 'selected' => $tree->getPreference('SHOW_SOURCE_DETAIL_TOGGLES'), 'options' => ['0' => I18N::translate('Show to visitors'), '1' => I18N::translate('Show to members')]]) ?>
+            <div class="form-text">
+                <?= /* I18N: Help text for the “Show source detail toggles in facts and events tables” configuration setting */ I18N::translate('This option will display the arrow toggles to expand source details in facts and events tables for individuals and families. This will override any automatic display of source details.') ?>
             </div>
         </div>
     </div>
